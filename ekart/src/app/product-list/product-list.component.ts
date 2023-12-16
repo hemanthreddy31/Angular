@@ -11,8 +11,12 @@ export class ProductListComponent {
   color:string='Red'
   product={
     year:2023,
-    Model:'15 Pro Max'
+    Model:'15 Pro Max',
+    pImage:'./../../assets/iphone.jpg',
+    instock:10
+
   }
+  
 
   getDiscountedPrice(){
     return 900.003;
