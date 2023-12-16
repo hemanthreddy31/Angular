@@ -1,1 +1,2 @@
 //Project main insertion points
+--after installing bootstrap rebuild the angular application other wise it wont work
