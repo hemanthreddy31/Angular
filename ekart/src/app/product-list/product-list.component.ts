@@ -16,9 +16,21 @@ export class ProductListComponent {
     instock:10
 
   }
+  count=0;
   
-
+  onNameChange(event:any){
+    console.log(event.target.value);
+  }
+  
   getDiscountedPrice(){
     return 900.003;
+  }
+  Increment(){
+    this.count++;
+    console.log(this.count);
+  }
+  Decrement(){
+    this.count--;
+    console.log(this.count);
   }
 }

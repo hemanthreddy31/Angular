@@ -1,0 +1,41 @@
+User Interface (UI) Events:
+
+Click Event: (click)
+Mouse Events: (mouseover), (mouseout), (mousemove), etc.
+Keyboard Events: (keydown), (keyup), (keypress)
+Input Events: (input), (change)
+Form Events:
+
+Submit Event: (ngSubmit)
+Lifecycle Events:
+
+OnInit: ngOnInit
+OnDestroy: ngOnDestroy
+AfterViewInit: ngAfterViewInit
+AfterViewChecked: ngAfterViewChecked
+AfterContentInit: ngAfterContentInit
+AfterContentChecked: ngAfterContentChecked
+Router Events:
+
+Navigation Events: Events related to navigation, such as NavigationStart, NavigationEnd, etc.
+Custom Events:
+
+Define and emit custom events using EventEmitter:
+typescript
+ 
+@Output() customEvent = new EventEmitter<any>();
+HTTP Events:
+
+Events related to HTTP requests, such as success and error events.
+Drag and Drop Events:
+
+Events related to drag and drop functionality, like (dragstart), (dragend), etc.
+Animation Events:
+
+Events related to Angular animations, such as (@triggerName.start), (@triggerName.done), etc.
+Touch Events:
+
+Events related to touch interactions, like (touchstart), (touchmove), (touchend), etc.
+Window and Document Events:
+
+Events related to the window and document, such as (window:resize), (document:keydown), etc.

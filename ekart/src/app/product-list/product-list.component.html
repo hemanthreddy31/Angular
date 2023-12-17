@@ -6,5 +6,9 @@
 <p>Color: {{product.Model}}</p>
 <p>Discounted Price: {{getDiscountedPrice().toFixed(2)}}</p>
 <button [disabled]="!(product.instock>0)">Buy Now</button>
-<input [value]="name">
-<input bind-value="name" [attr.aria-hidden]="">
+<input (input)="onNameChange($event)">
+<br>
+<button (click)="Increment()">Increase</button>
+<br>
+<button (click)="Decrement()">Decrease</button>
+

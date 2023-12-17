@@ -1,0 +1,1 @@
+the data flows from view to component class
