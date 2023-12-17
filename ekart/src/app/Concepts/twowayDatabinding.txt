@@ -1,0 +1,17 @@
+--Two way databinding data goes in both directions.
+
+-- we can implement Two way databinding using combination of property binding and EventBinding
+
+--[value]="this.name";
+--(input)="changeName($event)"
+
+
+--this.name=event.target.name;
+
+in input tag
+use
+--[(ngModel)]="searchText"
+--import forms module in app.module.ts and include in imports
+
+
+
