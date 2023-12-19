@@ -1,3 +1,6 @@
 --in custom property binding we can sent the data
 between component<--->component
 
+--we can pass data from parent component to child component 
+using @Input Decarator
+
