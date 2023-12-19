@@ -1,0 +1,3 @@
+--in custom property binding we can sent the data
+between component<--->component
+
