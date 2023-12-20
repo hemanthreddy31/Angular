@@ -1,0 +1,4 @@
+--from parent to child component we use @Input Decarator
+
+--from child to parent we use @Output Decarator
+
