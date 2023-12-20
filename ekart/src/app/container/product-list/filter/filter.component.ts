@@ -8,9 +8,13 @@ import { Component,Input } from '@angular/core';
 export class FilterComponent {
      @Input()
      all:number=0;
+
      @Input()
      inStock:number=0;
+
      @Input()
      outOfStock:number=0;
+
+     selectedFilterRadioButton:string='all';  
 
 }
