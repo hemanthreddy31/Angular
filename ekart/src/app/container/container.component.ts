@@ -6,31 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
-  name:string='Iphone';
-  price:number=999;
-  color:string='Red'
-  product={
-    year:2023,
-    Model:'15 Pro Max',
-    pImage:'./../../assets/iphone.jpg',
-    instock:10
+  
+    searchText: string='';
 
-  }
-  count=0;
-  
-  onNameChange(event:any){
-    console.log(event.target.value);
-  }
-  
-  getDiscountedPrice(){
-    return 900.003;
-  }
-  Increment(){
-    this.count++;
-    console.log(this.count);
-  }
-  Decrement(){
-    this.count--;
-    console.log(this.count);
-  }
+
+
+    setSearchText(value:string){
+       this.searchText=value;
+    }
+
+    
 }
