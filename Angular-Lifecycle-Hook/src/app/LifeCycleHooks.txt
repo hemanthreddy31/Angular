@@ -14,6 +14,8 @@ ngDestroy
 
 --ComponentCreated
 
+-------ngOnInit LifeCycle Hook
+
 ** angular raises ngOnInit hook after it creates the component and update its input properties. 
    this hook is raised after ngOnChanges
 
@@ -24,5 +26,26 @@ ngDestroy
 
 **By the time ngOninit gets called, none of the child components or projected contents or view are available at this point 
 Hence any property decorated with @ViewChild, @ViewChildren, @ContentChild or @ContentChildren will not be available to use.
+
+
+
+
+-----ngDoCheck LifeCycle Hook
+
+
+**Angular invokes ngDoCheck hook during every change Detection cycle .This hook is invoked even if there is no change in input bound properties.
+
+** For exmaple: The ngDoCheck lifecycle hook will run if you clicked a button on webpage, which does not do aynthing. But still its an event so the change
+    detection cycle will run and execute ngDoCheck hook.
+
+**Angular invokes ngDoCheck lifecycle hook after ngOnChanges & ngOnInit hooks.
+
+
+**You can use this hook to implement a custom change detection , when ever angular fails to detect any changes
+  made to input bound properties
+
+** The ngDoCheck hook is also a great place to use, when you wnat ot execute some code on every change detection cycle.
+
+
 
 
