@@ -18,5 +18,11 @@ export class ChildComponent {
   StyleParagraph(){
       console.log(this.paragraphEl.nativeElement);
       console.log(this.testEl.name);
+      console.log(this.paraElements);
+      console.log(this.testElements);
+      this.paraElements.forEach((el)=>{console.log(el.nativeElement)})
+      this.testElements.forEach((el)=>{
+        console.log(el.name);
+      })
    }
 }
