@@ -13,7 +13,14 @@ export class AppComponent {
   constructor(){
     console.log('App component constructor called');
    }
-
+   ngAfterViewInit(){
+    console.log('ngAfterViewInit Parent Hook called');
+   //  console.log('ngAfterViewInit',this.tempPara);
+  }
+  ngAfterViewChecked(){
+   console.log('ngAfterViewChecked Parent Hook Called');
+ 
+  }
 
    onBtnClicked(inputEl:HTMLInputElement){
     this.inputVal=inputEl.value;
