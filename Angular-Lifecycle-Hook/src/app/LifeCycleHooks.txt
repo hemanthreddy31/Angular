@@ -14,3 +14,15 @@ ngDestroy
 
 --ComponentCreated
 
+** angular raises ngOnInit hook after it creates the component and update its input properties. 
+   this hook is raised after ngOnChanges
+
+
+** The ngOnInit hook is fired only once i.e during the first change detection cycle. After that, if 
+    the input property changes , this hook does not gets called.
+
+
+**By the time ngOninit gets called, none of the child components or projected contents or view are available at this point 
+Hence any property decorated with @ViewChild, @ViewChildren, @ContentChild or @ContentChildren will not be available to use.
+
+
