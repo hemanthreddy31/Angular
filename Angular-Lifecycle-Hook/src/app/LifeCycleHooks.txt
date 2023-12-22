@@ -47,5 +47,8 @@ Hence any property decorated with @ViewChild, @ViewChildren, @ContentChild or @C
 ** The ngDoCheck hook is also a great place to use, when you wnat ot execute some code on every change detection cycle.
 
 
+--ngAfterContentInit
+
+**The ngAfterContentInit lifecycle hook is called after the components projected content has been fully initialized.
 
 

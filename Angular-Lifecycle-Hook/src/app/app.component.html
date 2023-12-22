@@ -11,6 +11,8 @@
 <div class="container">
   <input type="text" #inputEl (focus)="0">
   <button (click)="onBtnClicked(inputEl)">Submit</button>
-  <app-demo [message]="inputVal"></app-demo>
+  <app-demo [message]="inputVal">
+  <p #temp>This is projected Content</p>
+  </app-demo>
   
 </div>
