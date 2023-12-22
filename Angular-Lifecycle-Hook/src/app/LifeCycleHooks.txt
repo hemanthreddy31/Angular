@@ -1,0 +1,16 @@
+The angular life cycle hooks are methods that angular invokes on a directive or a component, as it creates, changes and destroys them
+
+
+--Component Created
+
+ngOnChanges
+ngOnInit
+ngDoCheck
+ngAfterContentInit
+ngAfterContentChecked
+ngAfterViewInit
+ngAfterViewChecked
+ngDestroy
+
+--ComponentCreated
+

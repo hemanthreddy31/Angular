@@ -9,6 +9,8 @@
 </div> -->
 
 <div class="container">
-  <app-demo [message]="'Hello,world'"></app-demo>
-  <button>Show / Hide</button>
+  <input type="text" #inputEl>
+  <button (click)="onBtnClicked(inputEl)">Submit</button>
+  <app-demo [message]="inputVal"></app-demo>
+  
 </div>
