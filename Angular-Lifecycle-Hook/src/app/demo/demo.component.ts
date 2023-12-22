@@ -11,7 +11,8 @@ import {
      ContentChild, 
      AfterContentChecked,
      AfterViewInit,
-     AfterViewChecked
+     AfterViewChecked,
+     OnDestroy
     }from '@angular/core';
 
 @Component({
@@ -19,7 +20,7 @@ import {
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
-export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked{
+export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy{
 
   title:string = 'Demo Component';
   @Input() message:string;
@@ -68,5 +69,9 @@ export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,
    ngAfterViewChecked(){
     console.log('ngAfterViewChecked Hook Called');
     console.log(this.tempPara.nativeElement.textContent);
+   }
+
+   ngOnDestroy(){
+    console.log('ng on Destroy Hook Called');
    }
 }

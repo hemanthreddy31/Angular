@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Angular-Lifecycle-Hook';
 
   inputVal:string='';
+  toDestroy:boolean=false;
   constructor(){
     console.log('App component constructor called');
    }
@@ -25,4 +26,9 @@ export class AppComponent {
    onBtnClicked(inputEl:HTMLInputElement){
     this.inputVal=inputEl.value;
    }
+
+   DestroyComponent(){
+    this.toDestroy=!this.toDestroy;
+   }
+
 }

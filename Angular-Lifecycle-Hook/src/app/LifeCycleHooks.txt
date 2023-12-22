@@ -75,7 +75,23 @@ Hence any property decorated with @ViewChild, @ViewChildren, @ContentChild or @C
 **Angular also updates the properties decorated with @ViewChild and @ViewChildren decorator before raising this hook.
 ** By the time this hook gets called for a component, all the lifecycle hook methods of child components and directives are completely processed and child components 
    are completely ready
-   
+
+
+--ngAfterViewChecked
+
+
+
+
+
+--ngOnDestroy 
+
+ ** Angular fires ngOnDestroy lifecycle hook just before the component or the directive is destroyed i.e removed from the DOM.
+ ** This hook is a great place to do some cleanup work like unsubscribe from an obesrvable or detach event handler etc.. as this hook is called right before the componet 
+    is destroyd 
+** This ngOnDestroy is the last lifecycle hook of a component & a directive 
+
+
+
 
 
 
