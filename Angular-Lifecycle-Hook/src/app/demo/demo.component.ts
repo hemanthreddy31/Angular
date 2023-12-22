@@ -1,11 +1,23 @@
-import { Component,Input,OnChanges, SimpleChanges,OnInit,ElementRef,ViewChild ,DoCheck, AfterContentInit, ContentChild}from '@angular/core';
+import { 
+  Component,
+  Input,
+  OnChanges,
+   SimpleChanges,
+   OnInit,
+   ElementRef,
+   ViewChild ,
+   DoCheck,
+    AfterContentInit,
+     ContentChild, 
+     AfterContentChecked
+    }from '@angular/core';
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
-export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit{
+export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked{
 
   title:string = 'Demo Component';
   @Input() message:string;
@@ -13,7 +25,7 @@ export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit{
   @ContentChild('temp') paraContent:ElementRef;
 
    constructor(){
-    console.log('Demo component constructor called');
+    //console.log('Demo component constructor called');
     // console.log(this.title);
     // console.log(this.message);
    }
@@ -25,18 +37,24 @@ export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit{
     //perfect place to called any initilazation logic 
     //because it gets called only once and during first change detection cycle after the inputproperites are initialized.
 
-     console.log('ngOnInit hook called');
+    console.log('ngOnInit hook called');
    }
 
 
    ngDoCheck(){
     console.log('ngDoCheck  hook called');
-    console.log('In ngDoCheck', this.paraContent);
+    //console.log('In ngDoCheck', this.paraContent);
    }
 
 
    ngAfterContentInit(){
       console.log('ngAfterContentInit Hook called');
-      console.log('In ngAfterContentInit', this.paraContent.nativeElement);
+      //console.log('In ngAfterContentInit', this.paraContent.nativeElement);
+   }
+
+
+   ngAfterContentChecked(){
+    console.log('ngAfterContentChecked Hook called');
+    console.log('In ngAfterContentInit', this.paraContent.nativeElement);
    }
 }

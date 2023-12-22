@@ -51,4 +51,25 @@ Hence any property decorated with @ViewChild, @ViewChildren, @ContentChild or @C
 
 **The ngAfterContentInit lifecycle hook is called after the components projected content has been fully initialized.
 
+**Angular updates the properties decorated with @ContentChild & @ ContentChildren decorator just before this hook is raised.
+
+** THis lifecycle hook gets called only once, during the first change detection cycle.After that , if the projected content changes , this lifcycle hook will not get called.
+
+
+--ngAfterContentChecked
+
+**The ngAfterContentChecked lifecycle hook is called during every change detection cycle, after angular has finished initializing and checking projected content.
+
+**Angular also updates the properties decorated with @ContentChild & @ContentChildern decorateor, before raising ngAfterContentChecked hook.
+
+**Angular raises this hook even if there is no projected content in the component.
+
+**The ngAfterContentInit hook is called after the projected content is initialized ngAfterContentChecked is called whenever the projected content is initialized , check & 
+  updated.
+
+
+
+
+
+
 
