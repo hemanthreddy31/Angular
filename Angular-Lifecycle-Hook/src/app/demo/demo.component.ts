@@ -9,7 +9,8 @@ import {
    DoCheck,
     AfterContentInit,
      ContentChild, 
-     AfterContentChecked
+     AfterContentChecked,
+     AfterViewInit
     }from '@angular/core';
 
 @Component({
@@ -17,7 +18,7 @@ import {
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
-export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked{
+export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit{
 
   title:string = 'Demo Component';
   @Input() message:string;
@@ -56,5 +57,11 @@ export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,
    ngAfterContentChecked(){
     console.log('ngAfterContentChecked Hook called');
     console.log('In ngAfterContentInit', this.paraContent.nativeElement);
+    console.log('In ngAfterContentchecked',this.tempPara);
+   }
+
+   ngAfterViewInit(){
+     console.log('ngAfterViewInit Hook called');
+     console.log('ngAfterViewInit',this.tempPara);
    }
 }
