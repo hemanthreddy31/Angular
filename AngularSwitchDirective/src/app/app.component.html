@@ -1,0 +1,51 @@
+<div class="notice-container">
+  <div class="notice-header">
+    <button (click)="onInfoClicked()">Info</button>
+    <button (click)="onServiceClicked()">Service</button>
+    <button (click)="onPrivacyClicked()">Privacy</button>
+    <button (click)="onUserClicked()">User Agreement</button>
+  </div>
+  <div class="notice-body" [ngSwitch]="tab">
+    <div *ngSwitchCase="'info'" >
+      <h1>Terms of services & privacy policy</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+        elit. Odio eius asperiores laboriosam repellat, ullam
+         molestiae quae animi harum, a architecto vel velit 
+         labore adipisci. Nemo id quidem minima asperiores culpa.
+        </p>
+    </div>
+    <div *ngSwitchCase="'services'">
+      <h1>Terms of services</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+        elit. Odio eius asperiores laboriosam repellat, ullam
+         molestiae quae animi harum, a architecto vel velit 
+         labore adipisci. Nemo id quidem minima asperiores culpa.
+        </p>
+    </div>
+    <div *ngSwitchCase="'privacy'">
+      <h1>privacy policy</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+        elit. Odio eius asperiores laboriosam repellat, ullam
+         molestiae quae animi harum, a architecto vel velit 
+         labore adipisci. Nemo id quidem minima asperiores culpa.
+        </p>
+    </div>
+    <div *ngSwitchCase="'user'">
+      <h1>User Agreement</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+        elit. Odio eius asperiores laboriosam repellat, ullam
+         molestiae quae animi harum, a architecto vel velit 
+         labore adipisci. Nemo id quidem minima asperiores culpa.
+        </p>
+    </div>
+    <div *ngSwitchDefault>
+      <h1>Default selected</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+        elit. Odio eius asperiores laboriosam repellat, ullam
+         molestiae quae animi harum, a architecto vel velit 
+         labore adipisci. Nemo id quidem minima asperiores culpa.
+        </p>
+    </div>
+
+  </div>
+</div>
