@@ -1,0 +1,36 @@
+<div class="notice-container">
+  <div class="notice-header">
+    <button (click)="displayTermsOfServices()">+</button>
+  </div>
+  <div class="notice-info">
+    <p>Read terms of services and privacy policy.</p>
+  </div>
+  <ng-template [ngIf]="display" [ngIfElse]="myTempVar">
+    <div class="notice-body">
+      <h1>Terms of services & Privacy Policy</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Excepturi eveniet, quae cupiditate labore, eum qui dolorem deleniti amet adipisci d
+        electus eos totam vel ratione quasi numquam blanditiis animi suscipit ipsa.</p>
+      <h2>Terms of Services</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo et nihil alias officia atque assumenda,
+        deserunt deleniti, maxime consequatur ipsam, debitis quasi! At praesentium doloremque molestias magnam eveniet
+        laudantium laboriosam.</p>
+      <h2>Privacy Policy</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur adipisci,
+        quisquam deleniti voluptates excepturi ratione. Laudantium, dicta! Esse, suscipit
+        aspernatur provident ipsam vitae ratione soluta est, ab repellendus iste aut!
+      </p>
+    </div>
+  </ng-template>
+<ng-template #myTempVar>
+  <div class="notice-body">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Incidunt, tempore sint totam officiis at aliquid fugit consectetur ducimus magnam cumque. 
+      Dignissimos blanditiis impedit voluptatibus inventore ipsa praesentium, tempore fugit ea.
+    </p>
+  </div>
+</ng-template>
+
+</div>
