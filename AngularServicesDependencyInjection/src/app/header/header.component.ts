@@ -4,7 +4,8 @@ import { SubscribeService } from '../Services/subscribe.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  providers:[SubscribeService]//2. What to Provide
 })
 export class HeaderComponent {
   selectedTab: string = 'home';
@@ -18,9 +19,11 @@ export class HeaderComponent {
   AdminClicked(){
     this.selectedTab = 'admin';
   }
+  //1.How to PROVIDE Dependency
+  constructor(private subService: SubscribeService){
 
+  }
   OnSubscribe(){
-    let subService = new SubscribeService();
-    subService.OnSubscribeClicked('monthly');
+    this.subService.OnSubscribeClicked('monthly');
   }
 }

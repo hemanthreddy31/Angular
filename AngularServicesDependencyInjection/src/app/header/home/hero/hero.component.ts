@@ -4,15 +4,22 @@ import { SubscribeService } from 'src/app/Services/subscribe.service';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+  styleUrls: ['./hero.component.css'],
+  providers:[SubscribeService]//what to provide
 })
 export class HeroComponent {
+
+
+    //1.How to PROVIDE Dependency
+    constructor(private subService: SubscribeService){
+
+    }
   OnSubscribe(){
     //Add User to Database
     //Send Email With Subscritpion Detail
     //Allow User to access the services
-    let subService = new SubscribeService();
-    subService.OnSubscribeClicked('monthly');
+   
+    this.subService.OnSubscribeClicked('monthly');
 
   }
 }
