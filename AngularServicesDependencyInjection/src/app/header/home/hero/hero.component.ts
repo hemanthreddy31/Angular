@@ -10,9 +10,10 @@ export class HeroComponent {
 
 
     //1.How to PROVIDE Dependency
-    constructor(private subService: SubscribeService){
+    // constructor(private subService: SubscribeService){
 
-    }
+    // }
+  subService=inject(SubscribeService);
   OnSubscribe(){
     //Add User to Database
     //Send Email With Subscritpion Detail
