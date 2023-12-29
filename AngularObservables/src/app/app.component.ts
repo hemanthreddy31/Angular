@@ -3,6 +3,7 @@ import { AfterViewInit } from '@angular/core';
 import { Component, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { Observable, from, of } from 'rxjs';
+import { map, filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -51,7 +52,22 @@ export class AppComponent implements AfterViewInit {
   promiseData = new Promise((resolve, reject) => {
     resolve([10, 20, 30, 40, 50]);
   });
-  myObservable = from(this.promiseData);
+
+  //myObservalbe - 2 4 6 8 10
+  //Result  - 10 ,20,30,40,50
+  myObservable = from([2, 4, 5, 6, 7, 8, 10]);
+
+  transformedObs = this.myObservable.pipe(
+    map((val) => {
+      return val * 5;
+    })
+  );
+
+  filteredObs = this.transformedObs.pipe(
+    filter((val, i) => {
+      return val % 4 === 0;
+    })
+  );
 
   GetAsyncData() {
     //Observer
@@ -68,7 +84,7 @@ export class AppComponent implements AfterViewInit {
     //   }
     // );
 
-    this.myObservable.subscribe({
+    this.filteredObs.subscribe({
       next: (val: any) => {
         this.data.push(val);
         console.log(val);
@@ -81,24 +97,24 @@ export class AppComponent implements AfterViewInit {
       },
     });
   }
-  buttonClicked() {
-    let count=0;
-    this.createBtnObs = fromEvent(
-      this.createBtn.nativeElement,
-      'click'
-    ).subscribe((data) => {
-      console.log(data);
-      this.showItem(++count);
-    });
-  }
+  // buttonClicked() {
+  //   let count=0;
+  //   this.createBtnObs = fromEvent(
+  //     this.createBtn.nativeElement,
+  //     'click'
+  //   ).subscribe((data) => {
+  //     console.log(data);
+  //     this.showItem(++count);
+  //   });
+  // }
   ngAfterViewInit() {
-    this.buttonClicked();
+    // this.buttonClicked();
   }
 
-  showItem(val){
-    let div=document.createElement('div');
-    div.innerText='Item' + val;
-    div.className='data-list';
-    document.getElementById('container').appendChild(div);
-  }
+  // showItem(val){
+  //   let div=document.createElement('div');
+  //   div.innerText='Item' + val;
+  //   div.className='data-list';
+  //   document.getElementById('container').appendChild(div);
+  // }
 }
