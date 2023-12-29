@@ -4,8 +4,7 @@ import { SubscribeService } from 'src/app/Services/subscribe.service';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css'],
-  providers:[SubscribeService]//what to provide
+  styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
 
