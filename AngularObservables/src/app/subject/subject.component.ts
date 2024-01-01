@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable,ReplaySubject,Subject } from 'rxjs';
+import { AsyncSubject, BehaviorSubject, Observable,ReplaySubject,Subject } from 'rxjs';
 import {ajax} from 'rxjs/ajax';
 
 @Component({
@@ -13,22 +13,22 @@ export class SubjectComponent implements OnInit{
     //   observer.next(Math.random())
     // }) 
     // const subject=new Subject();
-    const subject=new ReplaySubject();
-    //const subject=new BehaviorSubject<number>(100);
+    // const subject=new ReplaySubject();
+    // //const subject=new BehaviorSubject<number>(100);
      
-    subject.next(100);
-    subject.next(200);
-    subject.next(300);
+    // subject.next(100);
+    // subject.next(200);
+    // subject.next(300);
 
 
-    //Subscriber 1
-    subject.subscribe((data)=>{console.log(data)})
+    // //Subscriber 1
+    // subject.subscribe((data)=>{console.log(data)})
 
-    //Subscriber 2
-    subject.subscribe((data)=>{console.log(data)})
+    // //Subscriber 2
+    // subject.subscribe((data)=>{console.log(data)})
 
 
-    subject.next(2020);
+    // subject.next(2020);
 
 
     //AJAX CALL
@@ -44,5 +44,16 @@ export class SubjectComponent implements OnInit{
     //   console.log(res);
     // })
     // data.subscribe(subject);
+
+
+    //ASYNC Subject
+    const asyncSubject=new AsyncSubject();
+    asyncSubject.next(100);
+    asyncSubject.next(200);
+    asyncSubject.next(300);
+    asyncSubject.complete();
+    asyncSubject.subscribe(data=>console.log(`Subscriber 1: ${data}`));
+    asyncSubject.next(400);
+    asyncSubject.complete();
   }
 }
